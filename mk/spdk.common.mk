@@ -344,7 +344,7 @@ SYS_LIBS += -lcrypto
 SYS_LIBS += -lm
 
 ifeq ($(CONFIG_UADK),y)
-SYS_LIBS += -lwd -lwd_crypto
+SYS_LIBS += -lwd -lwd_crypto -lwd_comp
 endif
 
 PKGCONF ?= pkg-config

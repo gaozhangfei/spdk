@@ -77,6 +77,7 @@ endif
 # uadk drivers
 ifeq ($(findstring y,$(CONFIG_UADK)),y)
 DPDK_DRIVERS += crypto/uadk
+DPDK_DRIVERS += compress/uadk
 endif
 ifeq ($(CONFIG_CRYPTO),y)
 DPDK_DRIVERS += crypto

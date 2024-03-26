@@ -94,6 +94,12 @@ endif
 ifeq ($(CONFIG_VBDEV_COMPRESS_MLX5),y)
 DPDK_LIB_LIST += rte_compress_mlx5
 endif
+
+ifeq ($(CONFIG_UADK),y)
+ifneq (, $(wildcard $(DPDK_LIB_DIR)/librte_compress_uadk.*))
+DPDK_LIB_LIST += rte_compress_uadk
+endif
+endif
 endif
 
 ifeq ($(DPDK_FRAMEWORK),y)
