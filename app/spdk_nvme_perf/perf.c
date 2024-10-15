@@ -2398,7 +2398,7 @@ free_key(struct spdk_key **key)
 	}
 
 	spdk_keyring_put_key(*key);
-	spdk_keyring_file_remove_key(spdk_key_get_name(*key));
+	//spdk_keyring_file_remove_key(spdk_key_get_name(*key));
 	*key = NULL;
 }
 
@@ -2406,12 +2406,6 @@ static struct spdk_key *
 alloc_key(const char *name, const char *path)
 {
 	struct spdk_key *key;
-	int rc;
-
-	rc = spdk_keyring_file_add_key(name, path);
-	if (rc != 0) {
-		return NULL;
-	}
 
 	key = spdk_keyring_get_key(name);
 	if (key == NULL) {
